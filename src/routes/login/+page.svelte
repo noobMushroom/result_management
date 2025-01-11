@@ -1,6 +1,5 @@
 <script>
 	import { deserialize } from '$app/forms';
-	import { goto } from '$app/navigation';
 
 	let isShown = $state(false);
 	function toggle_is_shown() {
@@ -13,15 +12,15 @@
 
 	async function handleSumbit(event) {
 		event.preventDefault();
-		const data = new FormData(event.currentTarget);
+		const data_test = new FormData(event.currentTarget);
 		const response = await fetch(event.currentTarget.action, {
 			method: 'POST',
-			body: data
+			body: data_test
 		});
 		const result = deserialize(await response.text());
 		if (result.data.success) {
 			token = '';
-			goto('/homepage');
+			window.location.href = '/homepage';
 		} else {
 			token = '';
 			error = result.data.error;
@@ -29,8 +28,8 @@
 	}
 </script>
 
-<div class="  flex grow flex-col items-center">
-	<h1 class=" my-32 text-center text-4xl">LOGIN</h1>
+<div class="  flex grow flex-col items-center justify-center">
+	<h1 class=" my-8 text-center text-4xl md:my-16">LOGIN</h1>
 	<form
 		onsubmit={handleSumbit}
 		class=" flex h-96 flex-col items-center justify-center rounded-lg p-16 shadow md:w-2/5 md:bg-cyan-950/30"

@@ -1,4 +1,4 @@
-import { redirect, fail } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 import jwt from 'jsonwebtoken';
 
 export function load({ locals }) {
@@ -20,12 +20,6 @@ export const actions = {
         const token = data.get('token');
         const name = data.get('name');
         const jwt_token = import.meta.env.VITE_JWT_TOKEN;
-
-        if (!name) {
-            return fail(400, { name, name_missing: true });
-        } else if (!token) {
-            return fail(400, { token, token_missing: true });
-        }
 
         if (tokens.includes(token)) {
             const auth = jwt.sign(
