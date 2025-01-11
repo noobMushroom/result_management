@@ -29,10 +29,10 @@
 </script>
 
 <div class="  flex grow flex-col items-center justify-center">
-	<h1 class=" my-8 text-center text-4xl md:my-16">LOGIN</h1>
+	<h1 class=" mb-8 text-center text-4xl md:mb-16">LOGIN</h1>
 	<form
 		onsubmit={handleSumbit}
-		class=" flex h-96 flex-col items-center justify-center rounded-lg p-16 shadow md:w-2/5 md:bg-cyan-950/30"
+		class=" flex flex-col items-center justify-center rounded-lg p-4 shadow md:h-96 md:w-2/5 md:bg-cyan-950/30 md:p-16"
 	>
 		<div class="flex w-[100%] flex-col">
 			<label for="token"> Login Token: </label>
