@@ -53,7 +53,11 @@
 		</p>
 	</div>
 {/if}
-<form class="   flex grow flex-col items-center justify-center p-4" onsubmit={handleAddStudent}>
+<form
+	autocomplete="off"
+	class="   flex grow flex-col items-center justify-center p-4"
+	onsubmit={handleAddStudent}
+>
 	<div class=" flex w-[100%] flex-col items-center justify-center md:w-2/4">
 		<div class=" container">
 			<label for="admNo" class=" label"> Adm No: </label>
