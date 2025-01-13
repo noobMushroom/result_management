@@ -5,9 +5,9 @@ export const actions = {
         const data = await request.formData();
 
         const student = {
-            firstName: data.get('first-name'),
-            lastName: data.get('last-name'),
-            fatherName: data.get('father-name'),
+            firstName: data.get('firstName'),
+            lastName: data.get('lastName'),
+            fatherName: data.get('fatherName'),
             class: data.get('class'),
             section: data.get('section'),
             admNo: data.get('admNo'),

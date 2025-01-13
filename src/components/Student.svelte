@@ -20,11 +20,15 @@
 	</div>
 
 	<div class=" buttons flex flex-col justify-evenly text-xl md:justify-between">
-		<button aria-label="edit button" class=" mb-2 text-teal-700 md:text-2xl"
-			><i class="fa-regular fa-pen-to-square"></i></button
+		<a
+			href="/student/edit/{props.id}"
+			aria-label="edit button"
+			class=" mb-2 text-teal-700 md:text-2xl"><i class="fa-regular fa-pen-to-square"></i></a
 		>
-		<button aria-label="delete button" class=" text-red-500 md:text-2xl"
-			><i class="fa-solid fa-trash"></i></button
+		<button
+			aria-label="delete button"
+			onclick={() => props.handleDelete(props.id)}
+			class=" text-red-500 md:text-2xl"><i class="fa-solid fa-trash"></i></button
 		>
 	</div>
 </div>

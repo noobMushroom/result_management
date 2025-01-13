@@ -70,6 +70,7 @@
 		</div>
 		<button
 			type="submit"
+			spellcheck="false"
 			class=" my-4 w-[100%] rounded-lg bg-sky-700 py-3 text-xl hover:bg-sky-800/50">Login</button
 		>
 		{#if error}

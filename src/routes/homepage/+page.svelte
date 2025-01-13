@@ -1,6 +1,6 @@
 <script>
-	import HomeCard from './HomeCard.svelte';
-	import { data } from './home_card_data.js';
+	import HomeCard from '../../components/HomeCard.svelte';
+	import { data } from '$lib/home_card_data.js';
 </script>
 
 <div class=" flex grow items-center justify-center">
