@@ -23,7 +23,7 @@ export async function load({ params }) {
 export const actions = {
     default: async ({ request }) => {
         const data = await request.formData();
-        const id = data.id;
+        const id = data.get('id');
 
         const student = {
             firstName: data.get('firstName'),
@@ -37,7 +37,7 @@ export const actions = {
 
         try {
             const docRef = doc(db, 'students', id);
-            await updateDoc(docRef, student);
+            await updateDoc(docRef, student, { merge: true });
             return { success: true };
         } catch (e) {
             return { success: false, error: e.message };

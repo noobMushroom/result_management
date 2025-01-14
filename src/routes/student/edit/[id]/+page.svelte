@@ -46,7 +46,6 @@
 
 			goto('/student');
 		} else {
-			console.log(result.data.error);
 			error = result.data.error;
 		}
 	}

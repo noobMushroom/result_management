@@ -26,18 +26,16 @@
 		const result = deserialize(await response.text());
 		if (result.data.success) {
 			showSuccess = true;
-			student.firstName = '';
-			student.lastName = '';
-			student.fatherName = '';
-			student.dob = '';
-			student.admNo = '';
-			student.section = '';
-			student.class = '';
+			student.firstName = ' ';
+			student.lastName = ' ';
+			student.fatherName = ' ';
+			student.dob = ' ';
+			student.admNo = ' ';
+			student.section = ' ';
+			student.class = ' ';
 			setTimeout(() => {
 				showSuccess = false;
 			}, 3000);
-
-			$inspect(student);
 		} else {
 			error = result.data.error;
 		}

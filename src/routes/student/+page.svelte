@@ -17,6 +17,7 @@
 	//State for showing filter menu
 	let showDiv = $state(false);
 
+	let search_term = $state('');
 	let error = $state();
 
 	// Sorting function for the hondle filter
@@ -28,15 +29,27 @@
 		}
 	}
 
+	function handleSearch(student) {
+		let temp_search_term = `${student.firstName.toLowerCase()} ${student.lastName.toLowerCase()}`;
+		return temp_search_term.includes(search_term.toLowerCase().trim());
+	}
+
 	// Deriving the students array to filter which students to show on the screen
 	let students = $derived.by(() => {
+		let temp;
 		if (!classes_filter.length) {
-			return students_arr;
+			temp = students_arr;
 		}
 
 		if (classes_filter.length) {
-			return students_arr.filter(handleFilter);
+			temp = students_arr.filter(handleFilter);
 		}
+
+		if (search_term) {
+			temp = temp.filter(handleSearch);
+		}
+
+		return temp;
 	});
 
 	// Function to handle student delete
@@ -63,6 +76,7 @@
 		<input
 			type="search"
 			placeholder="Search Student"
+			bind:value={search_term}
 			name="search-bar"
 			id="search-bar"
 			autocomplete="off"
