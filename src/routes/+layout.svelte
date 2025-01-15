@@ -17,9 +17,10 @@
 </script>
 
 <main class=" main-container flex min-h-screen flex-col">
-	<nav>
+	<nav class=" flex">
 		{#if data.user}
 			<h1>{data.user.name}</h1>
+			<a href="/homepage">home</a>
 			<form method="post" action="/logout">
 				<button>Logout</button>
 			</form>
